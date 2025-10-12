@@ -143,7 +143,7 @@
 
         if (controlloUP($username,$password)){
             $_SESSION["UserLogin"] = $username;
-            $_SESSION["PaswLogin"] = $logs_arr[$username];
+            $_SESSION["PaswLogin"] = $password;
             header("location: dashboard.php");
         } else{
             echo $pagina_errore;
@@ -157,6 +157,6 @@
         if (!is_array($logs_arr)) {
             $logs_arr = [];
         }
-        return isset($logs_arr[$username]) && password_verify(trim($password), $logs_arr[$username]);
+        return (isset($logs_arr[$username]) && password_verify(trim($password), $logs_arr[$username]));
     }
 ?>

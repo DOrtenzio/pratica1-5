@@ -53,4 +53,8 @@ class Persona{
     function equals(Persona $personaCompleta): bool{
         return $this->nome===$personaCompleta->get_nome() && $this->cognome===$personaCompleta->get_cognome() && $this->dataNascita===$personaCompleta->get_dataNascita() && $this->codice_fiscale===$personaCompleta->get_codice_fiscale();
     }
+
+    function toRigaTabella(): string{
+        return "<tr><td>$this->nome</td><td>$this->cognome</td><td>$this->dataNascita</td><td>$this->codice_fiscale</td></tr>";
+    }
 }
