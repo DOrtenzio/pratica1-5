@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $pagina_errore='
     <!DOCTYPE html>
 <html lang="it">
@@ -156,10 +158,10 @@
         if (!is_array($logs_arr)) {
             $logs_arr = [];
         }
-        if (!isset($logs_arr[$username])){ //se non esiste già
+        if (!isset($logs_arr[$username])){ 
             $logs_arr[$username]=password_hash($password,PASSWORD_DEFAULT); 
             file_put_contents("user.txt",json_encode($logs_arr));
-            header("location: dashboard.php");
+            header("location: logAcc.php");
         } else
             echo $pagina_errore;
     } else{

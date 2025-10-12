@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $pagina_errore='
                 <!DOCTYPE html>
 <html lang="it">
@@ -137,17 +139,24 @@
     if(isset($_POST["username"]) && !empty(trim($_POST["username"])) && isset($_POST["password"]) && !empty(trim($_POST["password"]))){
         $username = trim($_POST["username"]);
         $password = trim($_POST["password"]);
-        //lettura da file
-        $logs_arr=json_decode(file_get_contents("user.txt"),true);
-        if (!is_array($logs_arr)) {
-            $logs_arr = [];
-        }
-        if (isset($logs_arr[$username]) && password_verify(trim($password), $logs_arr[$username])) {
+        
+
+        if (controlloUP($username,$password)){
+            $_SESSION["UserLogin"] = $username;
+            $_SESSION["PaswLogin"] = $logs_arr[$username];
             header("location: dashboard.php");
         } else{
             echo $pagina_errore;
         }
     } else{
         echo $pagina_errore;
+    }
+
+    function controlloUP($username,$password):bool{
+        $logs_arr=json_decode(file_get_contents("user.txt"),true);
+        if (!is_array($logs_arr)) {
+            $logs_arr = [];
+        }
+        return isset($logs_arr[$username]) && password_verify(trim($password), $logs_arr[$username]);
     }
 ?>
