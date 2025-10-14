@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    if(session_status()==PHP_SESSION_NONE)session_start();
     require_once("log.php");
     require_once("Persona.php");
 
@@ -22,7 +22,8 @@
                                     <th>Codice Fiscale</th>
                                 </tr>';
                 foreach($dati_arr as $persona){
-                    $dati_utenti.=$persona->toRigaTabella();
+                    $persona1 = new Persona($persona['nome'], $persona['cognome'], $persona['data_nascita'], $persona['codice_fiscale']);
+                    $dati_utenti.=$persona1->toRigaTabella();
                 }
                 $dati_utenti.="</table>";
             }
@@ -107,13 +108,14 @@
     }
 
     function aggiuntaNuovaPersona(Persona $persona) : bool {
-        $user_arr=json_decode(file_get_contents("data.txt"),true);
-        if(isset($user_arr[$persona->get_codice_fiscale()])){
+        $user_arr = json_decode(file_get_contents("data.txt"), true) ?? []; //array associativo con codice fiscale come chiave univoca
+        if (isset($user_arr[$persona->get_codice_fiscale()])) {
             return false;
-        } else{
-            $user_arr[$persona->get_codice_fiscale()]=$persona;
-            file_put_contents("data.txt",json_encode($user_arr));
+        } else {
+            $user_arr[$persona->get_codice_fiscale()] = $persona->toArray(); //salvo array associativo di Persona nell'array di arrayassociativi nel file
+            file_put_contents("data.txt", json_encode($user_arr));
             return true;
         }
     }
+    
 ?>

@@ -57,4 +57,14 @@ class Persona{
     function toRigaTabella(): string{
         return "<tr><td>$this->nome</td><td>$this->cognome</td><td>$this->dataNascita</td><td>$this->codice_fiscale</td></tr>";
     }
+
+    function toArray(): array {
+        return [
+            'nome'=> $this->nome,
+            'cognome'=> $this->cognome,
+            'dataNascita'=> $this->dataNascita,
+            'codice_fiscale'=> $this->codice_fiscale
+        ];
+    }
+    
 }
