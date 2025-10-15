@@ -21,12 +21,13 @@
         }
 
         .container {
+            text-align: center;
             background-color: #ffffff;
-            padding: 40px 30px;
+            padding: 30px 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: auto;
+            width: 25vw;
         }
 
         .container h1 {
@@ -160,7 +161,7 @@
         }
         if (!isset($logs_arr[$username])){ 
             $logs_arr[$username]=password_hash($password,PASSWORD_DEFAULT); 
-            file_put_contents("user.txt",json_encode($logs_arr));
+            file_put_contents("data/user.txt",json_encode($logs_arr));
             header("location: logAcc.php");
         } else
             echo $pagina_errore;

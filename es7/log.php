@@ -1,4 +1,6 @@
 <?php
+    require_once ("funzioni_php/funzioni.php");
+
     if(session_status()==PHP_SESSION_NONE)session_start();
 
     $pagina_errore='
@@ -21,12 +23,13 @@
         }
 
         .container {
+            text-align: center;
             background-color: #ffffff;
-            padding: 40px 30px;
+            padding: 30px 40px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            height: auto;
+            width: 25vw;
         }
 
         .container h1 {
@@ -150,13 +153,5 @@
         }
     } else{
         echo $pagina_errore;
-    }
-
-    function controlloUP($username,$password):bool{
-        $logs_arr=json_decode(file_get_contents("user.txt"),true);
-        if (!is_array($logs_arr)) {
-            $logs_arr = [];
-        }
-        return (isset($logs_arr[$username]) && password_verify(trim($password), $logs_arr[$username]));
     }
 ?>
