@@ -14,6 +14,7 @@
                             <meta charset="UTF-8">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
                             <title>Sito Generico - Aggiungi Utente</title>
+                            <link rel="stylesheet" href="../style.css">
                             <style>
                                 body {
                                     font-family: Arial, sans-serif;
@@ -84,42 +85,6 @@
                                 .form-btn button:hover {
                                     background-color: #0056b3;
                                 }
-
-                                .banner {
-                                    position: fixed;
-                                    top: 0;
-                                    left: 0;
-                                    width: 100%;
-                                    background-color: #007BFF;
-                                    color: white;
-                                    text-align: center; 
-                                    padding: 15px;
-                                }
-
-                                .banner h2 {
-                                    margin: 0;
-                                }
-
-                                .banner .button-cont {
-                                    position: absolute;
-                                    right: 3vw; 
-                                    top: 50%;
-                                    transform: translateY(-50%); 
-                                }
-
-                                .button-cont button {
-                                    background-color: white;
-                                    color: #007BFF;
-                                    border: none;
-                                    border-radius: 5px;
-                                    padding: 8px 16px;
-                                    cursor: pointer;
-                                    margin-left: 1vw;
-                                }
-
-                                .banner button:hover {
-                                    background-color: #e0e0e0;
-                                }
                             </style>
                         </head>
                         <body>
@@ -128,7 +93,7 @@
                             <div class="button-cont">
                                 <a href="../dashboard.php"><button>Home</button></a>
                                 <a href="../funzioni_php/aggiungi.php"><button>Filtra</button></a>
-                                <a href="../funzioni_php/aggiungi.php"><button>Logout</button></a>
+                                <a href="../logout.php"><button>Logout</button></a>
                             </div>
                         </div>
 

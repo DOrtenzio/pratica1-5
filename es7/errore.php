@@ -53,7 +53,7 @@ if(isset($_SESSION["msg_errore"]) && $_SESSION["msg_errore"] === "true"){
 <body>
     <div class="message">
         <h1>Errore!</h1>
-        <p>Inserimento Fallito! Verrai reindirizzato alla dashboard tra <span id="timer">5</span> secondi.</p>
+        <p>Errore! Verrai reindirizzato alla dashboard tra <span id="timer">5</span> secondi.</p>
     </div>
 </body>
 </html>

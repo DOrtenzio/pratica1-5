@@ -1,0 +1,207 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    width: 90%;
+    max-width: 400px; 
+    height: auto; 
+    text-align: center; 
+}
+
+.container p:first-child, .container-dash p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.container p:last-child, .container-dash p:last-child {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.container h1,.container-dash h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: border 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.btn-comune {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    margin-top: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comune:hover {
+    background-color: #0056b3;
+}
+
+.btn-comune-interno {
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comune-interno:hover {
+    background-color: #0056b3;
+}
+
+.back-to-home {
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    transition: background-color 0.3s ease;
+    margin-top: 5%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    flex: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    background-color: #007BFF;
+    transition: background-color 0.3s ease;
+}
+
+input[type="reset"] {
+    background-color: #6c757d;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+input[type="reset"]:hover {
+    background-color: #5a6268;
+}
+
+.card {
+    text-align: right;
+    background-color: #ffeaeaff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    height: auto;
+    width: 65vw;
+    margin-bottom: 10px;
+}
+
+.card p:first-child {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p:last-child {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.banner h2 {
+    margin: 0;
+}
+
+.banner .button-cont {
+    position: absolute;
+    right: 3vw; 
+    top: 50%;
+    transform: translateY(-50%); 
+}
+
+.button-cont button{
+    background-color: white;
+    color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-left: 1vw;
+}
+
+.banner button:hover {
+    background-color: #e0e0e0;
+}

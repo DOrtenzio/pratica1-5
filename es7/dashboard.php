@@ -40,19 +40,9 @@
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>Sito Generico</title>
+                        <link rel="stylesheet" href="style.css">
                         <style>
-                            body {
-                                font-family: Arial, sans-serif;
-                                background-color: #f4f4f4;
-                                margin: 0;
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                height: 100vh;
-                                padding-top: 10vh;
-                            }
-
-                            .container {
+                            .container-dash {
                                 text-align: center;
                                 background-color: #ffffff;
                                 padding: 30px 40px;
@@ -61,47 +51,6 @@
                                 height: auto;
                                 width: 75vw;
                                 margin-top: 10vh;
-                            }
-
-                            .card {
-                                text-align: right;
-                                background-color: #ffeaeaff;
-                                padding: 30px 40px;
-                                border-radius: 10px;
-                                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                                height: auto;
-                                width: 65vw;
-                                margin-bottom: 10px;
-                            }
-
-                            .card p:first-child {
-                                font-size: 24px;
-                                font-weight: bold;
-                                margin-bottom: 10px;
-                            }
-
-                            .card p:last-child {
-                                font-size: 16px;
-                                color: #666;
-                                margin-bottom: 20px;
-                            }
-
-                            .container p:first-child {
-                                font-size: 24px;
-                                font-weight: bold;
-                                margin-bottom: 10px;
-                            }
-
-                            .container p:last-child {
-                                font-size: 16px;
-                                color: #666;
-                                margin-bottom: 20px;
-                            }
-
-                            .btn-container {
-                                display: flex;
-                                justify-content: center;
-                                gap: 20px;
                             }
 
                             button {
@@ -122,55 +71,18 @@
                             a {
                                 text-decoration: none;
                             }
-
-                            .banner {
-                                position: fixed;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                background-color: #007BFF;
-                                color: white;
-                                text-align: center; /* centra il testo orizzontalmente */
-                                padding: 15px;
-                            }
-
-                            .banner h2 {
-                                margin: 0;
-                            }
-
-                            .banner .button-cont {
-                                position: absolute;
-                                right: 3vw; 
-                                top: 50%;
-                                transform: translateY(-50%); 
-                            }
-
-                            .button-cont button{
-                                background-color: white;
-                                color: #007BFF;
-                                border: none;
-                                border-radius: 5px;
-                                padding: 8px 16px;
-                                cursor: pointer;
-                                margin-left: 1vw;
-                            }
-
-
-                            .banner button:hover {
-                                background-color: #e0e0e0;
-                            }
                         </style>
                     </head>
-                    <body>
+                    <body style="padding-top: 18vh;">
                     <div class="banner">
                         <h2>Sito Generico</h2>
                         <div class="button-cont">
                             <a href='.'"funzioni_php/aggiungi.php"'.'><button>Aggiungi</button></a>
                             <a href='.'"funzioni_php/aggiungi.php"'.'><button>Filtra</button></a>
-                            <a href='.'"funzioni_php/aggiungi.php"'.'><button>Logout</button></a>
+                            <a href='.'"logout.php"'.'><button>Logout</button></a>
                         </div>
                     </div>
-                    <div class="container">
+                    <div class="container-dash">
                         <p>Sito Generico</p>
                         <p>Ecco i Dati relativi agli utenti!</p>
                         '.$dati_utenti.'
