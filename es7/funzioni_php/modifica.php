@@ -9,8 +9,8 @@
             exit();
         } else{
             if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
-                $user_arr=json_decode(file_get_contents("../data/data.txt"),true) ?? []; //MODIFICARE IMPLEMENTANDO IL METODO SOLO DEBUG
-                if($user_arr[$_POST["modifica"]]){ //modifica
+                $user_arr=letturaFile("../data/data.txt");
+                if($user_arr[$_POST["id"]]){ //modifica
                     echo '<!DOCTYPE html>
                             <html lang="it">
                             <head>
@@ -105,19 +105,19 @@
                                 <form action="modifica_utente.php" method="post">
                                     <div>
                                         <label for="nome">Nome:</label>
-                                        <input type="text" id="nome" name="nome" value="'.$user_arr[$_POST["modifica"]]->nome.'" required>
+                                        <input type="text" id="nome" name="nome" value="'.($user_arr[$_POST["id"]])['nome'].'" required>
                                     </div>
                                     <div>
                                         <label for="cognome">Cognome:</label>
-                                        <input type="text" id="cognome" name="cognome" value="'.$user_arr[$_POST["modifica"]]->cognome.'" required>
+                                        <input type="text" id="cognome" name="cognome" value="'.($user_arr[$_POST["id"]])['cognome'].'" required>
                                     </div>
                                     <div>
                                         <label for="data_nascita">Data di Nascita:</label>
-                                        <input type="date" id="data_nascita" name="data_nascita" value="'.$user_arr[$_POST["modifica"]]->data_nascita.'" required>
+                                        <input type="date" id="data_nascita" name="data_nascita" value="'.($user_arr[$_POST["id"]])['data_nascita'].'" required>
                                     </div>
                                     <div>
                                         <label for="codice_fiscale">Codice Fiscale:</label>
-                                        <input type="text" id="codice_fiscale" name="codice_fiscale" value="'.$user_arr[$_POST["modifica"]]->codice_fiscale.'" required>
+                                        <input type="text" id="codice_fiscale" name="codice_fiscale" value="'.($user_arr[$_POST["id"]])['codice_fiscale'].'" required>
                                     </div>
                                     <div class="form-btn">
                                         <button type="submit">Salva</button>

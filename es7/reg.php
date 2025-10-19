@@ -155,13 +155,10 @@
         $username = trim($_POST["username"]);
         $password = trim($_POST["password"]);
         //lettura da file
-        $logs_arr=json_decode(file_get_contents("user.txt"),true);
-        if (!is_array($logs_arr)) {
-            $logs_arr = [];
-        }
+        $logs_arr=letturaFile("data/user.txt");
         if (!isset($logs_arr[$username])){ 
             $logs_arr[$username]=password_hash($password,PASSWORD_DEFAULT); 
-            file_put_contents("data/user.txt",json_encode($logs_arr));
+            scritturaFile("data/user.txt",$logs_arr);
             header("location: logAcc.php");
         } else
             echo $pagina_errore;

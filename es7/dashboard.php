@@ -8,7 +8,7 @@
         exit();
     } else{
         if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
-            $dati_arr=json_decode(file_get_contents("data/data.txt"),true);
+            $dati_arr=letturaFile("data/data.txt");
             $dati_utenti="";
             if (!is_array($dati_arr)) {
                 $dati_arr = [];
@@ -78,7 +78,7 @@
                         <h2>Sito Generico</h2>
                         <div class="button-cont">
                             <a href='.'"funzioni_php/aggiungi.php"'.'><button>Aggiungi</button></a>
-                            <a href='.'"funzioni_php/aggiungi.php"'.'><button>Filtra</button></a>
+                            <a href='.'"errore.php"'.'><button>Filtra</button></a>
                             <a href='.'"logout.php"'.'><button>Logout</button></a>
                         </div>
                     </div>

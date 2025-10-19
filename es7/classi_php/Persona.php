@@ -66,7 +66,7 @@ class Persona{
             <p><strong>Data di Nascita:</strong> $this->dataNascita</p>
             <p><strong>Codice Fiscale:</strong> $this->codice_fiscale</p>
             <form method='post' action='funzioni_php/modifica.php'>
-                <input type='hidden' name='id' value='{$this->codice_fiscale}'>
+                <input type='hidden' name='id' value='$this->codice_fiscale'>
                 <button type='submit' name='modifica'>Modifica i Parametri</button>
             </form>
         </div>

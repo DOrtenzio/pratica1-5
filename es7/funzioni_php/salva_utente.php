@@ -20,12 +20,12 @@
     }
 
     function aggiuntaNuovaPersona(Persona $persona) : bool {
-        $user_arr = json_decode(file_get_contents("../data/data.txt"), true) ?? []; //array associativo con codice fiscale come chiave univoca
+        $user_arr = letturaFile("../data/data.txt");
         if (isset($user_arr[$persona->get_codice_fiscale()])) {
             return false;
         } else {
             $user_arr[$persona->get_codice_fiscale()] = $persona->toArray(); //salvo array associativo di Persona nell'array di arrayassociativi nel file
-            file_put_contents("../data/data.txt", json_encode($user_arr));
+            scritturaFile("../data/data.txt", $user_arr);
             return true;
         }
     }
