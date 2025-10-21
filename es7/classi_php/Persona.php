@@ -65,10 +65,16 @@ class Persona{
             <p><strong>Cognome:</strong> $this->cognome</p>
             <p><strong>Data di Nascita:</strong> $this->dataNascita</p>
             <p><strong>Codice Fiscale:</strong> $this->codice_fiscale</p>
-            <form method='post' action='funzioni_php/modifica.php'>
-                <input type='hidden' name='id' value='$this->codice_fiscale'>
-                <button type='submit' name='modifica'>Modifica i Parametri</button>
-            </form>
+            <div style='display: flex; gap: 10px; width=100%; '>
+                <form method='post' action='funzioni_php/modifica.php' style='width=70%;'>
+                    <input type='hidden' name='id' value='$this->codice_fiscale'>
+                    <button type='submit' name='modifica'style=' background-color: #ffdddd; color: #0f5939; font-family: Arial, sans-serif; border: 2px solid #0f5939; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.2);'>Modifica i Parametri</button>
+                </form>
+                <form method='post' action='funzioni_php/cancella.php'>
+                    <input type='hidden' name='id' value='$this->codice_fiscale'>
+                    <button type='submit' name='cancella' style=' background-color: #ffdddd; color: #a00; font-family: Arial, sans-serif; border: 2px solid #a00; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.2);'>Cancella</button>
+                </form>
+            </div>
         </div>
         ";
     }

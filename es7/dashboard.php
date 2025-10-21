@@ -40,38 +40,8 @@
                         <meta charset="UTF-8">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>Sito Generico</title>
-                        <link rel="stylesheet" href="style.css">
-                        <style>
-                            .container-dash {
-                                text-align: center;
-                                background-color: #ffffff;
-                                padding: 30px 40px;
-                                border-radius: 10px;
-                                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                                height: auto;
-                                width: 75vw;
-                                margin-top: 10vh;
-                            }
-
-                            button {
-                                padding: 10px 20px;
-                                font-size: 14px;
-                                border: none;
-                                border-radius: 5px;
-                                cursor: pointer;
-                                background-color: #007BFF;
-                                color: white;
-                                transition: background-color 0.3s ease;
-                            }
-
-                            button:hover {
-                                background-color: #0056b3;
-                            }
-
-                            a {
-                                text-decoration: none;
-                            }
-                        </style>
+                        <link rel="stylesheet" href="style/style.css">
+                        <link rel="stylesheet" href="style/style_dash.css">
                     </head>
                     <body style="padding-top: 18vh;">
                     <div class="banner">
