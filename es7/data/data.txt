@@ -1,1 +1,1 @@
-{"BNCLRA92D45L219Z":{"nome":"Laura 2","cognome":"Bianchi","data_nascita":null,"codice_fiscale":"BNCLRA92D45L219Z"},"MRYWLM80A01H501H":{"nome":"Paola","cognome":"Ballini","data_nascita":"2025-10-15","codice_fiscale":"MRYWLM80A01H501H"}}
+{"BNCLRA92D45L219Z":{"nome":"Laura","cognome":"Bianchi","data_nascita":"2025-10-15","codice_fiscale":"BNCLRA92D45L219Z"},"MRYWLM80A01H501H":{"nome":"Paolo","cognome":"Cortinovis","data_nascita":"2025-10-15","codice_fiscale":"MRYWLM80A01H501H"}}
