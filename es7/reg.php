@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once ("funzioni.php");
 
     $pagina_errore='
     <!DOCTYPE html>

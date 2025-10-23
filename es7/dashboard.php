@@ -63,7 +63,7 @@
                         <div class="button-cont">
                             <a href="../dashboard.php"><button>Home</button></a>
                             <a href="funzioni_php/filtra.php"><button>Filtra</button></a>
-                            <a href="../logout.php"><button>Logout</button></a>
+                            <a href="logout.php"><button>Logout</button></a>
                         </div>
                     </div>
                     <div class="container-dash">
