@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <h1>Sito Generico</h1>
-        <p class="subtitle">Errore, reinserisci le informazioni per accedere!</p>
+        <p class="subtitle" style="color: #a00;">Errore, reinserisci le informazioni per accedere!</p>
         <form action="log.php" method="post">
             <label for="username">Nome utente</label>
             <input type="text" id="username" name="username" placeholder="Riccinelli" required>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require_once ("funzioni.php");
+    require_once ("funzioni_php/funzioni.php");
 
     $pagina_errore='
     <!DOCTYPE html>
@@ -15,7 +15,7 @@
 <body>
     <div class="container">
         <h1>Sito Generico</h1>
-        <p class="subtitle">Errore reinserisci le informazioni per Registrarti!</p>
+        <p class="subtitle" style="color: #a00;">Errore reinserisci le informazioni per Registrarti!</p>
         <form action="reg.php" method="post">
             <label for="username">Nome utente</label>
             <input type="text" id="username" name="username" placeholder="Riccinelli" required>
