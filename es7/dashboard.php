@@ -1,5 +1,7 @@
 <?php
     if(session_status()==PHP_SESSION_NONE)session_start();
+    if(!isset($_SESSION["selezione_filtro"])) $_SESSION["selezione_filtro"] = "tutto";
+
     require_once ("funzioni_php/funzioni.php");
     require_once("classi_php/Persona.php");
 
@@ -31,8 +33,20 @@
                 $dati_utenti='';
                 foreach($dati_arr as $persona){
                     $persona1 = new Persona($persona['nome'], $persona['cognome'], $persona['data_nascita'], $persona['codice_fiscale']);
-                    $dati_utenti.=$persona1->toCard();
-                }
+                    if($_SESSION["selezione_filtro"] == "tutto") $dati_utenti.=$persona1->toCard();
+                    else if($_SESSION["selezione_filtro"] == "cognome") {
+                        if(isset($_SESSION["selezione_filtro_cognome"]) && !empty(trim($_SESSION["selezione_filtro_cognome"])) && $_SESSION["selezione_filtro_cognome"]==($persona1->get_cognome())){
+                            $dati_utenti.=$persona1->toCard();
+                        }
+                    }
+                    else if($_SESSION["selezione_filtro"] == "data") {
+                        if(isset($_SESSION["selezione_filtro_data"]) && !empty(trim($_SESSION["selezione_filtro_data"])) && $_SESSION["selezione_filtro_data"]==($persona1->get_dataNascita())){
+                            $dati_utenti.=$persona1->toCard();
+                        }
+                    } else{
+                        header("location: logout.php");
+                        exit();
+                    }
             }
             echo '<!DOCTYPE html>
                     <html lang="it">
@@ -47,9 +61,9 @@
                     <div class="banner">
                         <h2>Sito Generico</h2>
                         <div class="button-cont">
-                            <a href='.'"funzioni_php/aggiungi.php"'.'><button>Aggiungi</button></a>
-                            <a href='.'"errore.php"'.'><button>Filtra</button></a>
-                            <a href='.'"logout.php"'.'><button>Logout</button></a>
+                            <a href="../dashboard.php"><button>Home</button></a>
+                            <a href="funzioni_php/filtra.php"><button>Filtra</button></a>
+                            <a href="../logout.php"><button>Logout</button></a>
                         </div>
                     </div>
                     <div class="container-dash">
@@ -59,6 +73,7 @@
                     </div>
                     </body>
                     </html>';
+        }
         } else{
             header("location: logAcc.php");
             exit();

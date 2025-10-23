@@ -22,32 +22,28 @@
                             <h2>Sito Generico</h2>
                             <div class="button-cont">
                                 <a href="../dashboard.php"><button>Home</button></a>
-                                <a href="filtra.php"><button>Filtra</button></a>
+                                <a href="../funzioni_php/filtra.php"><button>Filtra</button></a>
                                 <a href="../logout.php"><button>Logout</button></a>
                             </div>
                         </div>
 
                         <div class="container">
-                            <h1>Inserisci Nuovo Utente</h1>
-                            <form action="salva_utente.php" method="post">
+                            <h1>Inserisci le condizioni per il filtro</h1>
+                            <form action="filtra_utente.php" method="post">
                                 <div>
-                                    <label for="nome">Nome:</label>
-                                    <input type="text" id="nome" name="nome" required>
+                                    <label for="cognome">Filtra per cognome</label>
+                                    <input type="radio" id="cognome" name="filtro" value="cognome">
                                 </div>
                                 <div>
-                                    <label for="cognome">Cognome:</label>
-                                    <input type="text" id="cognome" name="cognome" required>
+                                    <label for="data">Filtra per data:</label>
+                                    <input type="radio" id="data" name="filtro" value="data">
                                 </div>
                                 <div>
-                                    <label for="data_nascita">Data di Nascita:</label>
-                                    <input type="date" id="data_nascita" name="data_nascita" required>
-                                </div>
-                                <div>
-                                    <label for="codice_fiscale">Codice Fiscale:</label>
-                                    <input type="text" id="codice_fiscale" name="codice_fiscale" required>
+                                    <label for="data">Visualizza tutto:</label> 
+                                    <input type="radio" id="tutto" name="filtro" value="tutto" checked>
                                 </div>
                                 <div class="form-btn">
-                                    <button type="submit">Salva</button>
+                                    <button type="submit">Continua</button>
                                     <button type="reset">Reset</button>
                                 </div>
                             </form>

@@ -8,7 +8,8 @@
         exit();
     } else{
         if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
-                 echo '<!DOCTYPE html>
+            if(!empty(trim($_POST["filtro"])) && isset($_POST["filtro"])){
+                $paginabase='<!DOCTYPE html>
                         <html lang="it">
                         <head>
                             <meta charset="UTF-8">
@@ -28,32 +29,46 @@
                         </div>
 
                         <div class="container">
-                            <h1>Inserisci Nuovo Utente</h1>
-                            <form action="salva_utente.php" method="post">
-                                <div>
-                                    <label for="nome">Nome:</label>
-                                    <input type="text" id="nome" name="nome" required>
-                                </div>
-                                <div>
-                                    <label for="cognome">Cognome:</label>
-                                    <input type="text" id="cognome" name="cognome" required>
-                                </div>
-                                <div>
-                                    <label for="data_nascita">Data di Nascita:</label>
-                                    <input type="date" id="data_nascita" name="data_nascita" required>
-                                </div>
-                                <div>
-                                    <label for="codice_fiscale">Codice Fiscale:</label>
-                                    <input type="text" id="codice_fiscale" name="codice_fiscale" required>
-                                </div>
+                            <h1>Inserisci le condizioni per il filtro</h1>
+                            ';
+                $paginaconclusione='
                                 <div class="form-btn">
-                                    <button type="submit">Salva</button>
+                                    <button type="submit">Filtra</button>
                                     <button type="reset">Reset</button>
                                 </div>
                             </form>
                         </div>
                         </body>
                         </html>';
+
+                if($_POST["filtro"]=="tutto"){
+                    $_SESSION["selezione_filtro"]="tutto";
+                    header("location: ../dashboard.php");
+                    exit();
+                } else if($_POST["filtro"]=="cognome"){
+                    $_SESSION["selezione_filtro"]="cognome";
+                    echo $paginabase.'
+                    <form action="filtra_utente_specifica.php" method="post">
+                                <div>
+                                    <label for="cognome">Filtra per cognome</label>
+                                    <input type="text" name="filtro" placeholder="Viapiana" required>
+                                </div>
+                                '.$paginaconclusione;
+                } else if ($_POST["filtro"]=="data"){
+                    $_SESSION["selezione_filtro"]="data";
+                    echo $paginabase.'
+                    <form action="filtra_utente_specifica.php" method="post">
+                                <div>
+                                    <label for="cognome">Filtra per data</label>
+                                    <input type="date" name="filtro" required>
+                                </div>
+                                '.$paginaconclusione;
+                } else{
+                    $_SESSION["msg_errore"] = "true";
+                    header("location: ../errore.php");
+                    exit();
+                }
+            }
         } else{
             header("location: ../logAcc.php");
             exit();
