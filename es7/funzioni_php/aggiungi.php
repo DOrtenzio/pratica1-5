@@ -21,9 +21,10 @@
                         <div class="banner">
                             <h2>Sito Generico</h2>
                             <div class="button-cont">
-                                <a href="../dashboard.php"><button>Home</button></a>
-                                <a href="filtra.php"><button>Filtra</button></a>
-                                <a href="../logout.php"><button>Logout</button></a>
+                                <a href="../dashboard.php"><button>🏠</button></a>
+                                <a href="aggiungi.php"><button>➕</button></a>
+                                <a href="filtra.php"><button>🔎</button></a>
+                                <a href="../logout.php"><button>👋</button></a>
                             </div>
                         </div>
 
