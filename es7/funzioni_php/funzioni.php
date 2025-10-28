@@ -1,6 +1,6 @@
 <?php
     function controlloUP($username,$password):bool{
-        $logs_arr=json_decode(file_get_contents( __DIR__ . "/../data/user.txt"),true);
+        $logs_arr=json_decode(file_get_contents( __DIR__ . "/../data/user.json"),true);
         if (!is_array($logs_arr)) {
             $logs_arr = [];
         }
