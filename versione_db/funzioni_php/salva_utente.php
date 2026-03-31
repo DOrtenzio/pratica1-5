@@ -19,13 +19,13 @@
         exit();
     }
 
-    function aggiuntaNuovaPersona(Persona $persona) : bool { //CAMBIARE
-        $user_arr = query("../data/data.json");
+    function aggiuntaNuovaPersona(Persona $persona) : bool { 
+        $user_arr = query("Persone");
         if (isset($user_arr[$persona->get_codice_fiscale()])) {
             return false;
         } else {
-            $user_arr[$persona->get_codice_fiscale()] = $persona->toArray(); //salvo array associativo di Persona nell'array di arrayassociativi nel file
-            insert("../data/data.json", $user_arr);
+            $user_arr[$persona->get_codice_fiscale()] = $persona->toArray(); 
+            insert("Persone", $user_arr);
             return true;
         }
     }

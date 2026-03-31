@@ -10,7 +10,7 @@
         exit();
     } else{
         if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
-            $dati_arr=query("data/data.json");
+            $dati_arr=query("Persone");
             $dati_utenti="";
             if (!is_array($dati_arr)) {
                 $dati_arr = [];

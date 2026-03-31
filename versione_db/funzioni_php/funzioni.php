@@ -1,20 +1,20 @@
 <?php
-    function controlloUP($username,$password):bool{  //CAMBIARE
-        $logs_arr=json_decode(file_get_contents( __DIR__ . "/../data/user.json"),true);
-        if (!is_array($logs_arr)) {
-            $logs_arr = [];
-        }
-        return (isset($logs_arr[$username]) && password_verify(trim($password), $logs_arr[$username]));
+require("funzioni_php/connessione_db.php");
+    function controlloUP($username, $password, $conn): bool {
+        $sql = "SELECT * FROM utenti WHERE nomeUtente = '".$username."' AND cognomeUtente='".password_hash($password, PASSWORD_DEFAULT).";";
+        $risultato = $conn->query($sql);
+        return $risultato->num_rows()>0;
     }
 
-    function query($percorso):array{ //CAMBIARE
-        $logs_arr=json_decode(file_get_contents($percorso),true);
-        if (!is_array($logs_arr)) {
-            $logs_arr = [];
-        }
-        return $logs_arr;
+    function query($tabella, $conn): array {
+        $sql = "SELECT * FROM " . $tabella;
+        $risultato = $conn->query($sql);
+        return $risultato->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function insert($percorso,$dati): void{ //CAMBIARE
-        file_put_contents($percorso, json_encode($dati));
+    function insert($tabella, $dati, $conn): bool {
+        $valori = array_map(fn($v) => "'$v'", array_values($dati));
+        $sql = "INSERT INTO $tabella (" . implode(", ", array_keys($dati)) . ") 
+                VALUES (" . implode(", ", $valori) . ")";
+        return $conn->query($sql) !== false;
     }

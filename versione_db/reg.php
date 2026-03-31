@@ -39,10 +39,10 @@
         $username = trim($_POST["username"]);
         $password = trim($_POST["password"]);
         //lettura da file
-        $logs_arr=query("data/user.json");
+        $logs_arr=query("Utenti"); 
         if (!isset($logs_arr[$username])){ 
             $logs_arr[$username]=password_hash($password,PASSWORD_DEFAULT); 
-            insert("data/user.json",$logs_arr);
+            insert("Utenti",$logs_arr);
             header("location: logAcc.php");
         } else
             echo $pagina_errore;
