@@ -8,13 +8,13 @@
             exit();
     } else{
         if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
-            $user_arr=letturaFile("../data/data.json");
+            $user_arr=query("../data/data.json");
             if(!isset($_POST["id"]) || !$user_arr[trim($_POST["id"])]){
                 header("location: ../errore.php");
                 exit();
             } else{
                 unset($user_arr[trim($_POST["id"])]);
-                scritturaFile("../data/data.json",$user_arr);
+                insert("../data/data.json",$user_arr);
                 header("location: ../dashboard.php");
                 exit();
             }
