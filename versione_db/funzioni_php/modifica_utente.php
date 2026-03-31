@@ -3,8 +3,6 @@
     require_once ("../classi_php/Persona.php");
     require_once ("funzioni.php");
     require("connessione_db.php");
-    
-    $conn=null;
 
     if(!isset($_SESSION["UserLogin"]) || !isset($_SESSION["PaswLogin"])){
             header("location: ../logAcc.php");

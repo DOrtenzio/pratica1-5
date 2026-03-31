@@ -2,8 +2,6 @@
     session_start();
     require_once ("funzioni_php/funzioni.php");
     require("funzioni_php/connessione_db.php");
-    
-    $conn=null;
 
     $pagina_errore='
     <!DOCTYPE html>

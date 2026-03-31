@@ -4,8 +4,6 @@
     require_once ("funzioni.php");
     require_once ("funzioni.php");
 
-    $conn=null;
-
     if(!isset($_SESSION["UserLogin"]) || !isset($_SESSION["PaswLogin"])){
             header("location: ../logAcc.php");
             exit();
