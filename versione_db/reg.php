@@ -1,6 +1,9 @@
 <?php
     session_start();
     require_once ("funzioni_php/funzioni.php");
+    require("funzioni_php/connessione_db.php");
+    
+    $conn=null;
 
     $pagina_errore='
     <!DOCTYPE html>
@@ -39,10 +42,10 @@
         $username = trim($_POST["username"]);
         $password = trim($_POST["password"]);
         //lettura da file
-        $logs_arr=query("Utenti"); 
+        $logs_arr=query("Utenti",$conn); 
         if (!isset($logs_arr[$username])){ 
             $logs_arr[$username]=password_hash($password,PASSWORD_DEFAULT); 
-            insert("Utenti",$logs_arr);
+            insert("Utenti",$logs_arr,$conn);
             header("location: logAcc.php");
         } else
             echo $pagina_errore;

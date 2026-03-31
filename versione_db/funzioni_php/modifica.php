@@ -9,7 +9,7 @@
             exit();
         } else{
             if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
-                $user_arr=query("Persone");
+                $user_arr=query("Persone",$conn);
                 if($user_arr[$_POST["id"]]){ //modifica
                     echo '<!DOCTYPE html>
                             <html lang="it">

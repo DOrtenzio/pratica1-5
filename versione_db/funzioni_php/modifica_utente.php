@@ -2,6 +2,9 @@
     if(session_status()!=PHP_SESSION_ACTIVE) session_start();
     require_once ("../classi_php/Persona.php");
     require_once ("funzioni.php");
+    require("connessione_db.php");
+    
+    $conn=null;
 
     if(!isset($_SESSION["UserLogin"]) || !isset($_SESSION["PaswLogin"])){
             header("location: ../logAcc.php");
@@ -9,14 +12,14 @@
     } else{
         if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
             if(isset($_POST["nome"]) && isset($_POST["cognome"]) && isset($_POST["data_nascita"]) && isset($_POST["codice_fiscale"]) && !empty(trim($_POST["nome"])) && !empty(trim($_POST["cognome"])) && !empty(trim($_POST["data_nascita"])) && !empty(trim($_POST["codice_fiscale"]))){
-                $user_arr=query("Persone");
+                $user_arr=query("Persone",$conn);
                 $persona=new Persona($_POST["nome"],$_POST["cognome"],$_POST["data_nascita"],$_POST["codice_fiscale"]);
                 if( !$user_arr[trim($_POST["codice_fiscale"])]){
                     header("location: ../errore.php");
                     exit();
                 } else{
                     $user_arr[trim($_POST["codice_fiscale"])]=$persona->toArray();
-                    insert("Persone",$user_arr);
+                    insert("Persone",$user_arr,$conn);
                     header("location: ../dashboard.php");
                     exit();
                 }
