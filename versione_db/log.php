@@ -40,7 +40,7 @@
         $password = trim($_POST["password"]);
         
 
-        if (controlloUP($username,$password)){
+        if (controlloUP($username,$password,$conn)){
             $_SESSION["UserLogin"] = $username;
             $_SESSION["PaswLogin"] = $password;
             header("location: dashboard.php");

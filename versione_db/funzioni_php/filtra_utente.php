@@ -7,7 +7,7 @@
         header("location: ../logAcc.php");
         exit();
     } else{
-        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
+        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"],$conn)){
             if(!empty(trim($_POST["filtro"])) && isset($_POST["filtro"])){
                 $paginabase='<!DOCTYPE html>
                         <html lang="it">

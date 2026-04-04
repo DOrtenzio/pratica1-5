@@ -1,0 +1,13 @@
+app web
+salvataggio su file
+dati form -> pag php
+
+
+pagine protette con login altre visualizzabili
+
+file json -> array associativo -> aggiungo robe modulo -> file json Inserimento
+file json -> array associativo -> html Risposte
+file json -> array associativo -> ricerca dati da modificare e sostituzione -> salva dati json -> rappresenta dati html Modifica
+file json -> array associativo -> ricerca dati da cancellare -> salva dati json -> rappresenta dati html Cancellazione
+file utenti -> array associativo -> inserire dati con controllo -> salvo dati in json -> conferma html Registrazione
+file utenti -> array associativo -> controllo dati -> redirect pagina dashboard Login

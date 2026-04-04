@@ -7,7 +7,7 @@
         header("location: ../logAcc.php");
         exit();
     } else{
-        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
+        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"],$conn)){
                  echo '<!DOCTYPE html>
                         <html lang="it">
                         <head>

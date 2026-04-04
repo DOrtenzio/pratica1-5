@@ -8,9 +8,9 @@
             header("location: ../logAcc.php");
             exit();
         } else{
-            if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
+            if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"],$conn)){
                 $user_arr=query("Persone",$conn);
-                if($user_arr[$_POST["id"]]){ //modifica
+                if($user_arr[$_POST["id"]]){ 
                     echo '<!DOCTYPE html>
                             <html lang="it">
                             <head>

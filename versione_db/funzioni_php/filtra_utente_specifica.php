@@ -7,7 +7,7 @@
         header("location: ../logAcc.php");
         exit();
     } else{
-        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
+        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"],$conn)){
             if(!empty(trim($_POST["filtro"])) && isset($_POST["filtro"])){
                if(isset($_SESSION["selezione_filtro"]) && $_SESSION["selezione_filtro"]=="cognome"){
                     $_SESSION["selezione_filtro_cognome"]=trim($_POST["filtro"]);

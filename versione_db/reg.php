@@ -41,9 +41,8 @@
         $password = trim($_POST["password"]);
         //lettura da file
         $logs_arr=query("Utenti",$conn); 
-        if (!isset($logs_arr[$username])){ 
-            $logs_arr[$username]=password_hash($password,PASSWORD_DEFAULT); 
-            insert("Utenti",$logs_arr,$conn);
+        if (!isset($logs_arr[$username])){  
+            insertUtente($username,password_hash($password,PASSWORD_DEFAULT),$conn);
             header("location: logAcc.php");
         } else
             echo $pagina_errore;

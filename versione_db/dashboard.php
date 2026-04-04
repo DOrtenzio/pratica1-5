@@ -9,27 +9,13 @@
         header("location: logAcc.php");
         exit();
     } else{
-        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"])){
+        if(controlloUP($_SESSION["UserLogin"],$_SESSION["PaswLogin"],$conn)){
             $dati_arr=query("Persone",$conn);
             $dati_utenti="";
             if (!is_array($dati_arr)) {
                 $dati_arr = [];
                 $dati_utenti="<p>Nessun dato trovato!</p>";
             } else{
-                /* Se vogliamo usare tabella
-                $dati_utenti='<table border="1" style="margin:auto;">
-                                <tr>
-                                    <th>Nome</th>
-                                    <th>Cognome</th>
-                                    <th>Data di Nascita</th>
-                                    <th>Codice Fiscale</th>
-                                </tr>';
-                foreach($dati_arr as $persona){
-                    $persona1 = new Persona($persona['nome'], $persona['cognome'], $persona['data_nascita'], $persona['codice_fiscale']);
-                    $dati_utenti.=$persona1->toRigaTabella();
-                }
-                $dati_utenti.="</table>";
-                */
                 $dati_utenti='';
                 foreach($dati_arr as $persona){
                     $persona1 = new Persona($persona['nome'], $persona['cognome'], $persona['data_nascita'], $persona['codice_fiscale']);
