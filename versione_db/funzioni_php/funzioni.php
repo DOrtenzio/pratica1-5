@@ -9,7 +9,7 @@ require_once("connessione_db.php");
     }
 
     function query($tabella, $conn): array {
-        $allowed = ['utenti', 'persone'];
+        $allowed = ['Utenti', 'Persone'];
         if (!in_array($tabella, $allowed)) throw new Exception("Tabella non valida");
         $righe = $conn->query("SELECT * FROM $tabella")->fetchAll(PDO::FETCH_ASSOC);
         $arr = [];
